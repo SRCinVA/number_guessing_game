@@ -19,8 +19,10 @@ else:
     quit()
 
 random_number = random.randint(0,top_of_range) # the same as above, but this time it goes to 11 : )
+guesses = 0
 
 while True:
+    guesses += 1
     user_guess = input("Make a guess: ")
 
     if user_guess.isdigit():
@@ -34,5 +36,13 @@ while True:
 
     if user_guess == random_number:
         print("Correct!")
+        break    # this pulls you out of the loop.
     else:
-        print("Incorrect!")
+        if user_guess > random_number:
+            print("a bit lower next time!")
+        if user_guess < random_number:  # could have just done an 'else' here instead.
+            print("a bit higher next time!")
+
+print("You got it in", guesses, "guesses.") # w/commas, don't need spaces or to cast it as an int.
+
+
