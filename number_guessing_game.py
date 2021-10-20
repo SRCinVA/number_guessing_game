@@ -1,5 +1,4 @@
 import random
-
 #r = random.randrange(-1, 10) # prints a random number with range parameters (exclusive of last number)
                                 # (last number alone is the stop)
 # print(r)
@@ -37,11 +36,10 @@ while True:
     if user_guess == random_number:
         print("Correct!")
         break    # this pulls you out of the loop.
-    else:
-        if user_guess > random_number:
-            print("a bit lower next time!")
-        if user_guess < random_number:  # could have just done an 'else' here instead.
-            print("a bit higher next time!")
+    elif user_guess > random_number:
+        print("a bit lower next time!")
+    else: # just do an 'else' here, since less than is the only remaining option
+        print("a bit higher next time!")
 
 print("You got it in", guesses, "guesses.") # w/commas, don't need spaces or to cast it as an int.
 
